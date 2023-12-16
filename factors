@@ -7,6 +7,7 @@ import math
 
 PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
 
+
 def least_prime(n):
     """Find the smallest prime factor of n."""
     for prime in PRIMES:
@@ -15,6 +16,7 @@ def least_prime(n):
         if prime * prime > n:
             return n
     return n
+
 
 def factorize(digit):
     """Factorize a digit into two smaller digits."""
@@ -27,6 +29,7 @@ def factorize(digit):
 
     fac = digit // elem
     return fac, elem
+
 
 def factorize_file(path):
     """Factorize digits in the provided file into two smaller digits."""
@@ -48,6 +51,7 @@ def factorize_file(path):
         print("\nScript interrupted by user.")
         sys.exit(0)  # Exit with status code 0 to indicate a clean exit.
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         sys.exit(f"Usage: {sys.argv[0]} <path>")
@@ -57,4 +61,3 @@ if __name__ == "__main__":
     start_time = time.time()
 
     factorize_file(factors)
-
